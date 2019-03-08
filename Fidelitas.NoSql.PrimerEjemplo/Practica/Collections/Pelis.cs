@@ -5,15 +5,13 @@ using System.Web;
 
 namespace Practica.Collections
 {
-    public class Clientes
+    public class Pelis
     {
-        public Int32 id { get; set; }
-
         public String nombre { get; set; }
 
-        public int telefono { get; set; }
+        public String genero { get; set; }
 
-        public IList<Renta> renta { get; set; }
+        public int anio { get; set; }
 
     }
 }

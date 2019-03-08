@@ -14,6 +14,8 @@ namespace Practica.Collections
 
         public int dias_atraso { get; set; }
 
-       
+        public IList<Pelis> pelicula { get; set; }
+
+
     }
 }
