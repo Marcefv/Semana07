@@ -7,7 +7,7 @@ namespace Practica.Collections
 {
     public class Clientes
     {
-        public Int32 id { get; set; }
+        public int id { get; set; }
 
         public String nombre { get; set; }
 
