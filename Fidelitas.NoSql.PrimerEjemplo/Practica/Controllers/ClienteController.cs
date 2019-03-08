@@ -1,13 +1,17 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Practica.Collections;
 
 namespace Practica.Controllers
 {
     public class ClienteController : Controller
     {
+        private ContextoMongo elContexto = new ContextoMongo();
+        
         // GET: Cliente
         public ActionResult Index()
         {
@@ -23,7 +27,17 @@ namespace Practica.Controllers
         // GET: Cliente/Create
         public ActionResult Insertar()
         {
-            return View();
+            try
+            {
+                var cliente = elContexto.Clientes;
+               //cliente.InsertOne
+               
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
         }
 
         // POST: Cliente/Create

@@ -1,32 +1,33 @@
-﻿using Fidelitas.NoSql.PrimerEjemplo.Collections;
+﻿
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Practica.Collections;
 
-namespace Fidelitas.NoSql.PrimerEjemplo.Models
-{
     public class ContextoMongo
     {
-        public IMongoDatabase database;
-        public ContextoMongo()
-        {
-            var connectionString = Properties.Settings.Default.mongoConnection;
-            var client = new MongoClient(connectionString);
-            database = client.GetDatabase(Properties.Settings.Default.databaseName);
-        }
-
-        public IMongoCollection<Animales> LosAnimales
-        {
-            get
+        
+            public IMongoDatabase database;
+            public ContextoMongo()
             {
-                return (database.GetCollection<Animales>("animales"));
+                var connectionString = Practica.Properties.Settings.Default.mongoConnection;
+                var client = new MongoClient(connectionString);
+                database = client.GetDatabase(Practica.Properties.Settings.Default.databaseName);
+      
             }
-            set
-            {
-            }
-        }
 
+            public IMongoCollection<Clientes> Clientes
+            {
+                get
+                {
+                    return (database.GetCollection<Clientes>("Cliente"));
+                }
+                set
+                {
+                }
+            }
+
+        
     }
-}
